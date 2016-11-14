@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>展开和收起</title>
+    <style>
+        body{
+            margin:0 auto;
+            padding: 0px;
+        }
+        #pn{
+            background:#e8e8e8;
+            width:600px;
+            display:block;
+            margin:0 auto;
+            padding:5px;
+            font-size: 9pt;
+            height: auto;
+        }
+        .slider{
+            margin: 0 auto;
+            padding: 0;
+            width: 600px;
+            border-top: solid 4px gray;
+        }
+        .btn_slider{
+            background:gray;
+            width: 120px;
+            height: 30px;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 0 0 0;
+        }
+    </style>
+    <script>
+        function show(){
+            document.getElementById("hpn").style.display = "block";
+            document.getElementById("strHref").innerHTML = "收起-";
+            document.getElementById("strHref").href = "javascript:hide()";
+        }
+        function hide(){
+            document.getElementById("hpn").style.display = "none";
+            document.getElementById("strHref").innerHTML = "更多选项";
+            document.getElementById("strHref").href = "javascript:show()";
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <div id="pn">
+        <p>手机-商品筛选</p>
+        <p>网络：移动4G 联通3G 电信3G</p>
+        <div id="hpn" style="display: none;">
+            <p>价格：5000以上 4000-4999 3000-3999</p>
+            <p>特点：JDPhone计划"0"元购机 防水 长待机 1080全高清屏幕</p>
+        </div>
+    </div>
+    <p class="slider">
+        <a href="javascript:show()" id="strHref" class="btn_slider">更多选项+</a>
+
+    </p>
+</body>
+</html>
