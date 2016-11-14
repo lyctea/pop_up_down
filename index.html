@@ -1,68 +1,94 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <title>展开和收起</title>
-    <style>
-        body{
-            margin:0 auto;
-            padding: 0px;
+    <title>test</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <style type="text/css">
+        body
+        {
+            margin: 0 auto;
+            padding: 0;
         }
-        #pn{
-            background:#e8e8e8;
-            width:600px;
-            display:block;
-            margin:0 auto;
-            padding:5px;
+        a:focus
+        {
+            outline: none;
+        }
+        #pn
+        {
+            background: #e8e8e8;
+            width: 600px;
+            display: block;
+            margin: 0 auto;
+            padding: 5px;
             font-size: 9pt;
             height: auto;
         }
-        .slider{
-            margin: 0 auto;
+        .slide
+        {
+            margin: 0;
             padding: 0;
             width: 600px;
             border-top: solid 4px gray;
+            margin: 0 auto;
         }
-        .btn_slider{
-            background:gray;
+        .btn-slide
+        {
+            background: gray;
+            text-align: center;
             width: 120px;
             height: 30px;
-            text-align: center;
+            padding: 10px 0 0 0;
             margin: 0 auto;
             display: block;
             color: #fff;
             text-decoration: none;
-            padding: 10px 0 0 0;
         }
     </style>
-    <script>
-        function show(){
-            document.getElementById("hpn").style.display = "block";
-            document.getElementById("strHref").innerHTML = "收起-";
-            document.getElementById("strHref").href = "javascript:hide()";
-        }
-        function hide(){
-            document.getElementById("hpn").style.display = "none";
-            document.getElementById("strHref").innerHTML = "更多选项";
-            document.getElementById("strHref").href = "javascript:show()";
+    <script>  //以下jQ代码实现展开与收起效果
+    $(document).ready(function() {
 
-        }
-
-
+       // $("#strHref").toggle(function(){
+       //      $(this).text("收起-");
+       //      $("#hpn").show(1000);
+       // },function(){
+       //      $(this).text("更多选项");
+       //      $("#hpn").hide(1000);
+       //     });
+        $("#strHref").click(function(){
+            if($("#hpn").is(":visible")){
+                $(this).text("收起-");
+                $("#hpn").hide(1000);
+            }else{
+               $(this).text("更多选项");
+               $("#hpn").show(1000);
+            }
+        })
+    });
     </script>
 </head>
 <body>
     <div id="pn">
-        <p>手机-商品筛选</p>
-        <p>网络：移动4G 联通3G 电信3G</p>
-        <div id="hpn" style="display: none;">
-            <p>价格：5000以上 4000-4999 3000-3999</p>
-            <p>特点：JDPhone计划"0"元购机 防水 长待机 1080全高清屏幕</p>
+        <p>
+            手机 - 商品筛选</p>
+        <p>
+            网络： 移动4G（TD-LTE ） 联通4G（TD-LTE） 联通3G（WCDMA）
+        </p>
+        <div id="hpn" style="display: none">
+            <p>
+                价格： 5000以上 4000-4999 3000-3999 2000-2999
+            </p>
+            <p>
+                特点： JDPhone计划 "0"元购机 防水 长待机 1080P全高清屏
+            </p>
+            <p>
+                价格： 5000以上 4000-4999 3000-3999 2000-2999
+            </p>
+            <p>
+                价格： 5000以上 4000-4999 3000-3999 2000-2999
+            </p>
         </div>
     </div>
-    <p class="slider">
-        <a href="javascript:show()" id="strHref" class="btn_slider">更多选项+</a>
-
-    </p>
+    <p class="slide">
+        <a href="#" id="strHref" class="btn-slide">更多选项+</a></p>
 </body>
 </html>
